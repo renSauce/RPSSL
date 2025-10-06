@@ -1,0 +1,56 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="GetStartedApp.Views.MainWindow"
+        Title="RPSSL"
+        Width="520" Height="520"
+        Icon="/Assets/avalonia-logo.ico">
+
+        <!-- Emojis: https://emojidb.org/rock-paper-scissors-lizard-spock-emojis?utm_source=chatgpt.com -->
+
+  <StackPanel Margin="16" Spacing="10">
+    
+    <Border CornerRadius="12" Background="#F2F2F7" Padding="8">
+      <TextBlock Text="RPSSL" HorizontalAlignment="Center" FontSize="48" FontWeight="SemiBold"/>
+    </Border>
+    <Grid ColumnDefinitions="*,*,*" Margin="0,6,0,0">
+      <StackPanel HorizontalAlignment="Center">
+        <TextBlock Text="😐" FontSize="28" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="PlayerScoreText" Text="0" FontSize="28" HorizontalAlignment="Center"/>
+      </StackPanel>
+
+      <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+        <TextBlock Text="🤖" FontSize="28" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="BotScoreText" Text="0" FontSize="28" HorizontalAlignment="Center"/>
+      </StackPanel>
+
+      <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+        <TextBlock Text="🏁" FontSize="28" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="TargetScoreText" Text="3" FontSize="28" HorizontalAlignment="Center"/>
+      </StackPanel>
+    </Grid>
+
+    
+    <Border CornerRadius="12" Background="#E8F4FF" Padding="10" Margin="0,8,0,0">
+      <StackPanel>
+        <TextBlock x:Name="RoundCaption" Text="Choose a shape:" FontSize="24" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="RoundDetail" Text="" FontSize="18" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+      </StackPanel>
+    </Border>
+
+    
+    <UniformGrid Columns="5" Margin="0,6,0,0">
+      <Button Tag="Rock"    Click="Pick_Click" Height="80" Margin="4"><TextBlock Text="🪨" FontSize="40" HorizontalAlignment="Center"/></Button>
+      <Button Tag="Scissors" Click="Pick_Click" Height="80" Margin="4"><TextBlock Text="✂️" FontSize="40" HorizontalAlignment="Center"/></Button>
+      <Button Tag="Paper"   Click="Pick_Click" Height="80" Margin="4"><TextBlock Text="📄" FontSize="40" HorizontalAlignment="Center"/></Button>
+      <Button Tag="Spock"   Click="Pick_Click" Height="80" Margin="4"><TextBlock Text="🖖" FontSize="40" HorizontalAlignment="Center"/></Button>
+      <Button Tag="Lizard"  Click="Pick_Click" Height="80" Margin="4"><TextBlock Text="🦎" FontSize="40" HorizontalAlignment="Center"/></Button>
+    </UniformGrid>
+
+    
+    <Button x:Name="ResetButton" Content="Reset" Click="Reset_Click" Margin="0,8,0,0" Height="38"/>
+
+  </StackPanel>
+</Window>
